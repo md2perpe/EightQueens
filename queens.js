@@ -36,7 +36,7 @@ function okay(candidate)
 	
 	for (var i=0; i<candidate.length; i++)
 	{
-		// To which diagonals do this queen belong?
+		// To which diagonals does this queen belong?
 		var 
 			l = i + candidate[i],
 			r = i - candidate[i];

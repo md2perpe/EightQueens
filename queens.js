@@ -1,3 +1,55 @@
+queens();
+
+function queens()
+{
+	var candidates = permutations([0, 1, 2, 3, 4, 5, 6, 7]);
+	for (var i=0; i<candidates.length; i++)
+	{
+		if (okay(candidates[i]))
+		{
+			display(candidates[i]);
+		}
+	}
+}
+
+function display(board)
+{
+	document.write('<table border="1">');
+	for (var r=0; r<8; r++)
+	{
+		document.write('<tr>');
+		for (var c=0; c<8; c++)
+		{
+			document.write('<td>');
+			document.write(board[r] == c ? '*' : '&nbsp;');
+			document.write('</td>');
+		}
+		document.write('</tr>');
+	}
+	document.write('</table>');
+}
+
+function okay(candidate)
+{
+	var ldiags = [], rdiags = [];
+	
+	for (var i=0; i<candidate.length; i++)
+	{
+		var 
+			l = i + candidate[i],
+			r = i - candidate[i];
+			
+		if (ldiags.indexOf(l) != -1 || rdiags.indexOf(r) != -1)
+			return false;
+			
+		ldiags.push(l);
+		rdiags.push(r);
+	}
+	
+	return true;
+}
+
+
 function permutations(list)
 {
 	// Empty list has one permutation

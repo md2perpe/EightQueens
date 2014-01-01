@@ -12,4 +12,4 @@ Ideas
 
 Therefore, every solution can be represented as a permutation of the column numbers (0 through 7).
 
-* If two queens can reach each other diagonally, either 'row' + 'col' (for \ diagonals) or 'row' - 'col' (for / diagonals) are equal for the two queens.
+* If two queens can reach each other diagonally, either _row_ + _col_ (for \ diagonals) or _row_ - _col_ (for / diagonals) are equal for the two queens.

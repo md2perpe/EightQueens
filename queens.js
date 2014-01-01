@@ -67,7 +67,7 @@ function permutations(list)
 	
 	for (var i=0; i<list.length; i++)
 	{
-		// Clone list
+		// Clone list (kind of)
 		var copy = Object.create(list);
 
 		// Cut one element from list

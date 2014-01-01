@@ -31,21 +31,27 @@ function display(board)
 
 function okay(candidate)
 {
+	// Diagonal numbers for queens in earlier rows
 	var ldiags = [], rdiags = [];
 	
 	for (var i=0; i<candidate.length; i++)
 	{
+		// To which diagonals do this queen belong?
 		var 
 			l = i + candidate[i],
 			r = i - candidate[i];
 			
+		// If a queen in an earlier row already belongs to one of these diagonals,
+		// then this is not a solution
 		if (ldiags.indexOf(l) != -1 || rdiags.indexOf(r) != -1)
 			return false;
 			
+		// Save this queen's diagonals
 		ldiags.push(l);
 		rdiags.push(r);
 	}
 	
+	// No diagonal collisions found, so this is a solution
 	return true;
 }
 
